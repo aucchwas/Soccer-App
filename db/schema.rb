@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_28_224934) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_28_225135) do
   create_table "leagues", force: :cascade do |t|
     t.integer "custom_id"
     t.string "league_name"
     t.string "type"
     t.string "country_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "team_name"
+    t.integer "points"
+    t.integer "goal_diff"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
