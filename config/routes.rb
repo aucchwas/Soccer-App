@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "team/index"
+  get "team/show"
   get "league/index"
   get "league/show"
   root "league#index"
