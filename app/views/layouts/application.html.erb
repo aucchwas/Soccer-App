@@ -22,7 +22,7 @@
       
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <%= link_to "Leagues", 
+    <%= link_to "Home", 
         root_path,
         class:"navbar-brand" %>
     
@@ -31,6 +31,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+            <%= link_to "Leagues", 
+                    leagues_path,
+                    class:"nav-link" %>
+        </li>
+
         <li class="nav-item">
             <%= link_to "Teams",
                     teams_path,

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "leagues#index"
 
-  resources :leagues
+  resources :leagues do
+    resources :teams, only: [ :index, :show ]
+  end
   resources :teams
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
