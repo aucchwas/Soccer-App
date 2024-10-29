@@ -43,6 +43,12 @@
                     teams_path,
                     class: "nav-link" %>
         </li>
+
+        <li class="nav-item">
+            <%= link_to "About us",
+                    about_path,
+                    class: "nav-link" %>
+        </li>
       </ul>
       <%= form_with url: search_teams_path, method: :get, local: true, class: "d-flex" do %>
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

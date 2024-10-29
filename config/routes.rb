@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  root "leagues#index"
+  get "static_pages/about"
+  root "static_pages#home"
 
   resources :leagues do
     resources :teams, only: [ :index, :show ]
   end
   resources :teams
+
+   get "home", to: "static_pages#home", as: "home"
+   get "about", to: "static_pages#about", as: "about"
 
    get "search_teams", to: "teams#search", as: "search_teams"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
