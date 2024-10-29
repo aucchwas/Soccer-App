@@ -14,7 +14,7 @@ class TeamsController < ApplicationController
   end
 
   def search
-    @teams = Team.search(params[:query]).page(params[:page]).per(5)
-    render :index
+      @teams = Team.where("team_name LIKE ?", "%"+ params[:q]+ "%")
+      render :search
   end
 end

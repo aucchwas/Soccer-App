@@ -1,0 +1,22 @@
+<h1>Search Results</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Points</th>
+      <th>Goal Difference</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.team_name %></td>
+        <td><%= team.points %></td>
+        <td><%= team.goal_diff %></td>
+        <td><%= link_to "Show", team_path(team), class: "btn btn-secondary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

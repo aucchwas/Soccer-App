@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "static_pages/about"
   root "static_pages#home"
+  get "search", to: "teams#search", as: "search_teams"
 
   resources :leagues do
     resources :teams, only: [ :index, :show ]
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
    get "home", to: "static_pages#home", as: "home"
    get "about", to: "static_pages#about", as: "about"
 
-   get "search_teams", to: "teams#search", as: "search_teams"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

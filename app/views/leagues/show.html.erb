@@ -4,3 +4,10 @@
   <hr class="my-4">
   <p>The type of this event is : <%= @league.league_type %></p>
 </div>
+
+
+<ul>
+  <% @teams.each do |team|%>
+  <li><%= team.team_name %></li>
+  <% end %>
+</ul>
