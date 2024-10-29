@@ -3,9 +3,9 @@ class TeamsController < ApplicationController
     # @league = League.find(params[:league_id])
     # @teams = Team.all
     if params[:query].present?
-      @teams = Team.search(params[:query]).page(params[:page]).per(5)
+      @teams = Team.search(params[:query]).page(params[:page]).per(16)
     else
-      @teams = Team.page(params[:page]).per(5)
+      @teams = Team.page(params[:page]).per(16)
     end
   end
 
