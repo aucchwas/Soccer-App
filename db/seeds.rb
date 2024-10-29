@@ -44,7 +44,8 @@ def get_teams(custom_id, league)
             team_name: team_data['name'],
             points: team['points'],
             goal_diff: team['goalsDiff'],
-            league_id: league.id
+            league_id: league.id,
+            team_id: team_data['id']
           )
         end
       end
