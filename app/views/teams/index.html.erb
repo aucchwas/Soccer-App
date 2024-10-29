@@ -9,12 +9,19 @@
     </tr>
   </thead>
   <tbody>
-    <% @teams.each do |team| %>
+    
+    <% if !@team.present? %>
+      <% @teams.each do |team| %>
+        <tr>
+          <td><%= team.team_name %></td>
+          <td><%= team.points %></td>
+          <td><%= team.goal_diff %></td>
+          <td><%= link_to "Show", team_path(team), class: "btn btn-secondary"%></td>
+        </tr>
+      <% end %>
+    <% else %>
       <tr>
-        <td><%= team.team_name %></td>
-        <td><%= team.points %></td>
-        <td><%= team.goal_diff %></td>
-        <td><%= link_to "Show", team_path(team), class: "btn btn-secondary"%></td>
+        <td>No Teams found</td>
       </tr>
     <% end %>
   </tbody>

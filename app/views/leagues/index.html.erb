@@ -9,13 +9,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @leagues.each do |league| %>
+    <% if !@league.present? %>
+      <% @leagues.each do |league| %>
       <tr>
         <td><%= league.league_name %></td>
         <td><%= league.country_name %></td>
         <td><%= league.league_type %></td>
-        <td><%= league.id%></td>
         <td><%= link_to "Show", league_path(league), class: "btn btn-secondary"%></td>
+      </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td>No Leagues found</td>
       </tr>
     <% end %>
   </tbody>
