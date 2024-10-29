@@ -14,8 +14,10 @@
         <td><%= team.team_name %></td>
         <td><%= team.points %></td>
         <td><%= team.goal_diff %></td>
-        <td><%= link_to "Show", team_path(team)%></td>
+        <td><%= link_to "Show", team_path(team), class: "btn btn-secondary"%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @teams%>
