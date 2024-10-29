@@ -1,7 +1,6 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= @league.league_name %></h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary"><%= @league.country_name %></h6>
-    <p class="card-text">The type of this event is : <%= @league.league_type %></p>
-  </div>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @league.league_name %></h1>
+  <p class="lead"><%= @league.country_name %></p>
+  <hr class="my-4">
+  <p>The type of this event is : <%= @league.league_type %></p>
 </div>

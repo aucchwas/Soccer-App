@@ -1,4 +1,8 @@
-<h1><%= @team.team_name %></h1>
-<p>points: <%= @team.points%></p>
-<p>goal_diff: <%= @team.goal_diff %></p>
-<p>id: <%= @team.league_id%></p>
+
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @team.team_name %></h1>
+  <p class="lead">Total points: <%= @team.points%></p>
+  <hr class="my-4">
+  <p>Total goal_diff: <%= @team.goal_diff %></p>
+</div>
