@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   def index
-    @league = League.find(params[:league_id])
+    # @league = League.find(params[:league_id])
     @teams = Team.all
   end
 

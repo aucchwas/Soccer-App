@@ -1,25 +1,7 @@
-<h1><%= @league.league_name %></h1>
-<p>Country: <%= @league.country_name %></p>
-<p>Type: <%= @league.league_type %></p>
-
-<h2>Teams in this League</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Team</th>
-      <th>Points</th>
-      <th>Goal Difference</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @league.teams.each do |team| %>
-      <tr>
-        <td><%= team.team_name %></td>
-        <td><%= team.points %></td>
-        <td><%= team.goal_diff %></td>
-        <td><%= link_to "Show", league_team_path(@league, team) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @league.league_name %></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary"><%= @league.country_name %></h6>
+    <p class="card-text">The type of this event is : <%= @league.league_type %></p>
+  </div>
+</div>

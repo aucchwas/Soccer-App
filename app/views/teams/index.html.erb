@@ -14,7 +14,7 @@
         <td><%= team.team_name %></td>
         <td><%= team.points %></td>
         <td><%= team.goal_diff %></td>
-        <td><%= link_to "Show", league_team_path(@league,team)%></td>
+        <td><%= link_to "Show", team_path(team)%></td>
       </tr>
     <% end %>
   </tbody>
