@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "players/index"
+  get "players/show"
   get "static_pages/about"
   root "static_pages#home"
   get "search", to: "teams#search", as: "search_teams"
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
     resources :teams, only: [ :index, :show ]
   end
   resources :teams
+  resources :players
 
    get "home", to: "static_pages#home", as: "home"
    get "about", to: "static_pages#about", as: "about"

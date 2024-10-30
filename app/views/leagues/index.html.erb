@@ -12,6 +12,7 @@
     <% if !@league.present? %>
       <% @leagues.each do |league| %>
       <tr>
+        <td><%= league.id%></td>
         <td><%= league.custom_id%></td>
         <td><%= league.league_name %></td>
         <td><%= league.country_name %></td>
