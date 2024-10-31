@@ -7,7 +7,6 @@
       <th>Age</th>
       <th>Number</th>
       <th>Position</th>
-      <th>Photo</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -18,7 +17,6 @@
         <td><%= player.age %></td>
         <td><%= player.number %></td>
         <td><%= player.position %></td>
-        <td><%= image_tag player.photo, size: "70x70" %></td>
         <td><%= link_to "Show", player_path(player), class: "btn btn-secondary" %></td>
       </tr>
     <% end %>
