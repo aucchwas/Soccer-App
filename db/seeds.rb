@@ -1,21 +1,12 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
 require 'uri'
 require 'net/http'
 require 'openssl'
 require 'json'
 
+# Clear existing data
+Player.delete_all
 Team.delete_all
 League.delete_all
-Player.delete_all
 
 HOST = 'v3.football.api-sports.io'
 API_KEY = "73fc261b18c5c0cb4ef28499b44853f4"
@@ -25,11 +16,7 @@ def get_players(team_id, team)
 
   http = Net::HTTP.new(url.host, url.port)
   http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-
-  http = Net::HTTP.new(url.host, url.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER # Ensure SSL verification
 
   request = Net::HTTP::Get.new(url)
   request["x-rapidapi-host"] = HOST
@@ -73,7 +60,7 @@ def get_teams(custom_id, league)
 
   http = Net::HTTP.new(url.host, url.port)
   http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER # Ensure SSL verification
 
   request = Net::HTTP::Get.new(url)
   request["x-rapidapi-host"] = HOST
@@ -91,15 +78,15 @@ def get_teams(custom_id, league)
         standings_data.each do |team|
           team_data = team['team']
 
-          team = Team.find_or_create_by!(
+          team_record = Team.find_or_create_by!(
             team_name: team_data['name'],
             points: team['points'],
             goal_diff: team['goalsDiff'],
-            league_id: league.id,
+            league_id: league.id
           )
 
           # Fetch players for the team
-          get_players(team_data['id'], team)
+          get_players(team_data['id'], team_record)
         end
       end
     else
@@ -114,7 +101,7 @@ url = URI("https://v3.football.api-sports.io/leagues")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+http.verify_mode = OpenSSL::SSL::VERIFY_PEER # Ensure SSL verification
 
 request = Net::HTTP::Get.new(url)
 request["x-rapidapi-host"] = HOST
@@ -130,13 +117,13 @@ if response.is_a?(Net::HTTPSuccess)
       league_data = item['league']
       country_data = item['country']
 
-      leagues = League.find_or_create_by!(
+      league = League.find_or_create_by!(
         league_name: league_data['name'],
         league_type: league_data['type'],
         custom_id: league_data['id'],
         country_name: country_data['name']
       )
-      get_teams(leagues.custom_id, leagues)
+      get_teams(league.custom_id, league)
     end
   else
     puts "Key 'response' not found in the JSON data."

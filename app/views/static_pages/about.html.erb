@@ -1,4 +1,51 @@
-<h1>About Us</h1>
-<p>Welcome to our football management application. Here you can manage leagues, teams, and players efficiently.</p>
-<p>Our mission is to provide the best tools for managing football leagues and teams, making it easier for you to focus on the game.</p>
-<p>Thank you for using our application!</p>
+<div class="container mt-5">
+  <h1 class="display-4 text-center mb-4">About Us</h1>
+  <p class="lead text-center">Welcome to our Football Management Application! ⚽</p>
+
+  <p>Our application is designed to streamline the management of football leagues, teams, and players, giving you a powerful yet user-friendly interface to organize all aspects of your football operations.</p>
+  
+  <hr>
+
+  <h2>Database Structure</h2>
+  <p>Our backend database is structured into three main entities: <strong>Leagues</strong>, <strong>Teams</strong>, and <strong>Players</strong>. Each entity represents a key area of football management, and we've designed the application so that all the relevant data can be easily accessed, managed, and updated.</p>
+  
+  <div class="text-center mb-4">
+    <%= image_tag 'football_something.png', alt: 'Football Logo', class: 'img-fluid' %>
+  </div>
+
+  <h3>Leagues</h3>
+  <ul>
+    <li><strong>League Name</strong> and <strong>League Type</strong> (e.g., professional, amateur)</li>
+    <li><strong>Country Name</strong> where the league is based</li>
+    <li><strong>Custom ID</strong> for easy identification within the system</li>
+    <li><strong>Created At</strong> and <strong>Updated At</strong> timestamps to track data changes</li>
+  </ul>
+  <p>Each league in our system has a dedicated page where you can view and manage all details. Additionally, you can search for leagues, view their details, and see all associated teams.</p>
+
+  <h3>Teams</h3>
+  <ul>
+    <li><strong>Team Name</strong> and <strong>Points</strong> for tracking team standings</li>
+    <li><strong>Goal Difference</strong> to help differentiate team performance</li>
+    <li><strong>League ID</strong> linking the team to its league</li>
+    <li><strong>Created At</strong> and <strong>Updated At</strong> timestamps to keep records accurate</li>
+  </ul>
+  <p>Every team also has a dedicated page in our application, where you can view player rosters, statistics, and team performance. Routes and search functionalities allow you to easily find teams, update points, and review historical performance metrics.</p>
+
+  <h3>Players</h3>
+  <ul>
+    <li><strong>Name</strong>, <strong>Age</strong>, and <strong>Position</strong> to define each player’s profile</li>
+    <li><strong>Number</strong> (jersey number) and <strong>Photo</strong> for a complete player profile</li>
+    <li><strong>Team ID</strong> to link players to their respective teams</li>
+    <li><strong>Created At</strong> and <strong>Updated At</strong> timestamps for record-keeping</li>
+  </ul>
+  <p>Each player has an individual profile page where you can manage and view details such as age, position, and current team affiliation. Our search capabilities make it simple to find specific players by name, position, or team.</p>
+
+  <hr>
+
+  <h2>Fully Configured Routes and Search Capabilities</h2>
+  <p>Our application comes with <strong>dedicated pages for each entity</strong> (Leagues, Teams, Players) so you can access and manage each aspect of your database seamlessly. With configured routes and advanced search options, finding the information you need is fast and efficient.</p>
+
+  <p>Whether you want to search by <strong>league</strong>, <strong>team name</strong>, or <strong>player</strong>, our intuitive interface and robust backend structure allow you to perform operations effortlessly. From updating team scores to managing player transfers, our application is built to handle the complexities of football management so you can focus on the game.</p>
+
+  <p class="text-center font-weight-bold mt-4">Thank you for using our Football Management Application!</p>
+</div>
