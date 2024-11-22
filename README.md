@@ -31,18 +31,22 @@ Follow the steps below to set up the application locally:
    ```bash
    git clone https://github.com/yourusername/football_management_app.git
    cd football_management_app
-2. Install Dependencies:
-bundle install
+2. **Install Dependencies**:
+    ```bash
+    bundle install
 
-3. Set Up the Database:
-bin/rails db:create
-bin/rails db:migrate
+3. **Set Up the Database**:
+    ```bash 
+    bin/rails db:create
+    bin/rails db:migrate
 
-4. Populate the Database: Run the seeds file to populate the database using the external API:
-bin/rails db:seed
+4. **Populate the Database: Run the seeds file to populate the database using the external API**:
+    ```bash
+    bin/rails db:seed
 
-5. Start the Server:
-bin/rails server
+5. **Start the Server**:
+    ```bash
+    bin/rails server
 
 Usage
 Viewing Teams
@@ -109,7 +113,7 @@ git commit -m "Descriptive commit message"
 
 Push Changes:
 
-    git push origin feature-name
+    git push origin <feature-name>
 
     Create a Pull Request: Open a pull request to the main repository.
 
