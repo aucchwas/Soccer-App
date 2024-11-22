@@ -48,7 +48,10 @@ Follow the steps below to set up the application locally:
     ```bash
     bin/rails server
 
-Usage
+---
+
+## Usage
+
 Viewing Teams
 
     Navigate to the Teams page to view all teams.
@@ -90,7 +93,8 @@ Rake Tasks
 
     import_books.rake: Imports data from a CSV file into the database.
 
-Contributing
+---
+## Contributing
 
 Contributions are welcome! Follow these steps to contribute to the project:
 
@@ -117,7 +121,8 @@ Push Changes:
 
     Create a Pull Request: Open a pull request to the main repository.
 
-Contact
+---
+## Contact
 
 For any questions or feedback, please contact: ucchwas175@gmail.com.
 
